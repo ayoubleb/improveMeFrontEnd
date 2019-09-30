@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../auth/auth.service';
-import { SignUpInfo } from '../auth/signup-info';
+import { AuthService } from '../core/auth/auth.service';
+import { SignUpInfo } from '../core/auth/signup-info';
 
 @Component({
   selector: 'app-register',

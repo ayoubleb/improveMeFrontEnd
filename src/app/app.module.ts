@@ -12,7 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { PmComponent } from './pm/pm.component';
 
-import { httpInterceptorProviders } from './auth/auth-interceptor';
+import { httpInterceptorProviders } from './core/auth/auth-interceptor';
 
 @NgModule({
   declarations: [
