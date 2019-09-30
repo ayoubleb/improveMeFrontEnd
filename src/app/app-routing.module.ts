@@ -1,47 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { PmComponent } from './pm/pm.component';
-import { AdminComponent } from './admin/admin.component';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import {Shell} from './shell/shell.service';
 
 const routes: Routes = [
-    {
-        path: 'home',
-        component: HomeComponent
-    },
-    {
-        path: 'user',
-        component: UserComponent
-    },
-    {
-        path: 'pm',
-        component: PmComponent
-    },
-    {
-        path: 'admin',
-        component: AdminComponent
-    },
-    {
-        path: 'auth/login',
-        component: LoginComponent
-    },
-    {
-        path: 'signup',
-        component: RegisterComponent
-    },
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    }
+  Shell.childRoutes([
+    { path: 'about', loadChildren: './about/about.module#AboutModule' }
+  ]),
+  // Fallback when no prior route is matched
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
-
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules, enableTracing: true})],
+    exports: [RouterModule],
+    providers: []
 })
 export class AppRoutingModule { }
