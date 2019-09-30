@@ -4,7 +4,13 @@ import {Shell} from './shell/shell.service';
 
 const routes: Routes = [
   Shell.childRoutes([
-    { path: 'about', loadChildren: './about/about.module#AboutModule' }
+    { path: 'about', loadChildren: './about/about.module#AboutModule' },
+    { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
+    { path: 'home', loadChildren: './home/home.module#HomeModule' },
+    { path: 'login', loadChildren: './login/login.module#LoginModule' },
+    { path: 'pm', loadChildren: './pm/pm.module#PmModule' },
+    { path: 'register', loadChildren: './register/register.module#RegisterModule' },
+    { path: 'user', loadChildren: './user/user.module#UserModule' },
   ]),
   // Fallback when no prior route is matched
   { path: '**', redirectTo: '', pathMatch: 'full' }

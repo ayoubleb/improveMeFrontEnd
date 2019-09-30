@@ -5,12 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
-import { AdminComponent } from './admin/admin.component';
-import { PmComponent } from './pm/pm.component';
 
 import { httpInterceptorProviders } from './core/auth/auth-interceptor';
 import {AdminModule} from './admin/admin.module';
@@ -19,6 +13,7 @@ import {LoginModule} from './login/login.module';
 import {PmModule} from './pm/pm.module';
 import {RegisterModule} from './register/register.module';
 import {UserModule} from './user/user.module';
+import {ShellModule} from './shell/shell.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +29,7 @@ import {UserModule} from './user/user.module';
     PmModule,
     RegisterModule,
     UserModule,
+    ShellModule,
     AppRoutingModule
   ],
   providers: [httpInterceptorProviders],
