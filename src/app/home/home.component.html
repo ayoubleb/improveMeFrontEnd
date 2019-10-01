@@ -5,6 +5,9 @@
     <strong>Roles:</strong> {{info.authorities}}<br />
     <strong>Token:</strong> {{info.token}}.
   </p>
+  <p>
+    {{stories | json}}
+  </p>
   <button class="btn btn-secondary" (click)="logout()">Logout</button>
 </div>
 

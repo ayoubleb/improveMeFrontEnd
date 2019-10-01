@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TokenStorageService } from '../auth/token-storage.service';
+import {StoryService} from '../services/story.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,9 @@ import { TokenStorageService } from '../auth/token-storage.service';
 })
 export class HomeComponent implements OnInit {
   info: any;
+  stories: any;
 
-  constructor(private token: TokenStorageService) { }
+  constructor(private token: TokenStorageService, private storyservice: StoryService) { }
 
   ngOnInit() {
     this.info = {
@@ -18,6 +20,18 @@ export class HomeComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+
+    this.storyservice.getAllStories().subscribe(
+      data => {
+        console.log(data);
+        this.stories = data;
+      },
+      error => {
+        console.log(error);
+       // this.errorMessage = error.error.message;
+       // this.isSignUpFailed = true;
+      }
+    );
   }
 
   logout() {
