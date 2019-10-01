@@ -15,6 +15,7 @@ import { PmComponent } from './pm/pm.component';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { StoryComponent } from './home/story/story.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     AdminComponent,
     PmComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    StoryComponent
    ],
   imports: [
     BrowserModule,

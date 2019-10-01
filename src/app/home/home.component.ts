@@ -34,8 +34,8 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  logout() {
+ /* logout() {
     this.token.signOut();
     window.location.reload();
-  }
+  }*/
 }

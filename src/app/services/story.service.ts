@@ -15,4 +15,10 @@ export class StoryService {
   getAllStories(): Observable<Story[]> {
     return this.http.get<Story[]>(this.storyUrl + '/all');
   }
+  //addStory
+  ///owner/{id}
+
+  //    @PutMapping("/{id}")
+  //     public ResponseEntity<Story> updateStory(@RequestBody Story story, @PathVariable long id)
+
 }
