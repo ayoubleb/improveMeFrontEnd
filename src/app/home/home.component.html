@@ -1,4 +1,18 @@
-<div>
-<app-story isConnected="info.token"></app-story>
-
+<div class="myClass">
+  <div *ngIf="info.token; else loggedOut">
+        <app-story *ngFor="let story of storiesByUser"
+                   [story]="story">
+        </app-story>
+    <button class="btn btn-secondary" (click)="logout()">Logout</button>
+  </div>
+        <ng-template #loggedOut>
+          <br>
+          <div class="card text-white bg-danger " >
+            <div class="card-header">Warning</div>
+            <div class="card-body">
+              <h5 class="card-title">Please login or create a new account</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </ng-template>
 </div>
