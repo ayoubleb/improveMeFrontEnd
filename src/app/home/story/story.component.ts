@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {Router} from '@angular/router';
 import {Story} from '../../model/story';
@@ -13,6 +13,7 @@ export class StoryComponent implements OnInit {
   constructor(private token: TokenStorageService) { }
   @Input() isConnected: string;
   @Input() story: Story;
+  @Output() handleclick: EventEmitter<any> = new EventEmitter();
   ngOnInit() {
   }
 
@@ -22,5 +23,8 @@ export class StoryComponent implements OnInit {
     this.router.navigate(['/auth/login']);
 
   }*/
+  sendEvent(id) {
+    this.handleclick.emit(id);
+  }
 
 }

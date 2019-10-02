@@ -19,10 +19,13 @@ export class StoryService {
   getAllStoriesByOwner(): Observable<Story[]> {
     return this.http.get<Story[]>(this.storyUrl + '/stories/personal/' + this.username);
   }
-  //addStory
-  ///owner/{id}
 
-  //    @PutMapping("/{id}")
-  //     public ResponseEntity<Story> updateStory(@RequestBody Story story, @PathVariable long id)
+  deleteStory(id): Observable<any> {
+    return this.http.delete<any>(this.storyUrl + '/' + id);
+  }
+
+  editStory(data): Observable<any> {
+    return this.http.patch<any>(this.storyUrl + '/stories/remove/', data );
+  }
 
 }

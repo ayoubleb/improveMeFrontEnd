@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
+      //window.location.reload();
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
     }
@@ -54,6 +55,6 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
-    //window.location.reload();
+    window.location.reload();
   }
 }

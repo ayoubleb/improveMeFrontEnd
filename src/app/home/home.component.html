@@ -1,7 +1,9 @@
 <div class="myClass">
   <div *ngIf="info.token; else loggedOut">
         <app-story *ngFor="let story of storiesByUser"
-                   [story]="story">
+                   [story]="story"
+                   (handleclick)="weRemove($event)"
+        >
         </app-story>
     <button class="btn btn-secondary" (click)="logout()">Logout</button>
   </div>
