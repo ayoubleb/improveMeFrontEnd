@@ -1,0 +1,28 @@
+
+
+<div class="row" style="margin-top: 45px; margin-bottom: 45px">
+  <div class="col-md-2" >
+  </div>
+  <div class="form-group col-md-10" >
+    <div style="width:100%; display: inline;">
+      <div style="float:left;width: 50%; height: 500px; background-color:whitesmoke;border-radius: 20px">
+        <div style="margin: 10px">
+          <p>Day: {{story.date}}    In {{story.place}}, Morocco</p>
+          <p>Title: {{story.title}} </p>
+          <br>
+          <p>Story: {{story.body}} </p>
+          <p>Mood: {{story.mood > 5 ? 'Happy': 'sad'}} </p>
+        </div>
+      </div>
+      <div class="wrapper" style="float:left;width: 50%;">
+        <div class="btnc" style="background-color:lawngreen; margin-top:5%;height: 50px;">
+          Edit story
+        </div>
+        <div class="btnc" style="background-color:indianred; margin-top:5%;height: 50px;">
+          Remove Story
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
