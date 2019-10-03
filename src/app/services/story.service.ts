@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Story} from '../model/story';
 import {TokenStorageService} from '../auth/token-storage.service';
+import {StoryInfo} from '../add-story/story-info';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class StoryService {
 
   editStory(data): Observable<any> {
     return this.http.patch<any>(this.storyUrl + '/stories/remove/', data );
+  }
+
+  addStory(storyInfo): Observable<any> {
+    return this.http.post(this.storyUrl + '/addStory', storyInfo);
   }
 
 }

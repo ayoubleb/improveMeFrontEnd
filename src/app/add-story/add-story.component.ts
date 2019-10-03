@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SignUpInfo} from '../auth/signup-info';
 import {StoryInfo} from './story-info';
+import {StoryService} from '../services/story.service';
 
 @Component({
   selector: 'app-add-story',
@@ -9,28 +9,28 @@ import {StoryInfo} from './story-info';
 })
 export class AddStoryComponent implements OnInit {
   storyInfo: StoryInfo;
-  constructor() { }
+  form: any = {};
+  constructor(private storyService: StoryService) { }
 
   ngOnInit() {
   }
-onSubmit()
+onSubmit() {
   this.storyInfo = new StoryInfo(
-    this.form.name,
-    this.form.username,
-    this.form.email,
-    this.form.password);
+    this.form.title,
+    this.form.date,
+    this.form.place,
+    this.form.mood,
+    this.form.body);
 
-  this.authService.signUp(this.signupInfo).subscribe(
+
+  this.storyService.addStory(this.storyInfo).subscribe(
     data => {
-  console.log(data);
-  this.isSignedUp = true;
-  this.isSignUpFailed = false;
-},
-error => {
-  console.log(error);
-  this.errorMessage = error.error.message;
-  this.isSignUpFailed = true;
+      console.log(data);
+      alert('Story added');
+    },
+    error => {
+      console.log(error);
+    }
+  );
 }
-);
-
 }
