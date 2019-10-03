@@ -16,6 +16,7 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { StoryComponent } from './home/story/story.component';
+import { AddStoryComponent } from './add-story/add-story.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { StoryComponent } from './home/story/story.component';
     PmComponent,
     HeaderComponent,
     FooterComponent,
-    StoryComponent
+    StoryComponent,
+    AddStoryComponent
    ],
   imports: [
     BrowserModule,

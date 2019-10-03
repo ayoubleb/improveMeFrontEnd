@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { PmComponent } from './pm/pm.component';
 import { AdminComponent } from './admin/admin.component';
 import {AuthGuard} from './home/guards/auth.guard';
+import {AddStoryComponent} from './add-story/add-story.component';
 
 const routes: Routes = [
     {
@@ -24,6 +25,11 @@ const routes: Routes = [
         component: PmComponent,
       canActivate: [AuthGuard],
     },
+  {
+    path: 'addStory',
+    component: AddStoryComponent,
+    canActivate: [AuthGuard],
+  },
     {
         path: 'admin',
         component: AdminComponent,
